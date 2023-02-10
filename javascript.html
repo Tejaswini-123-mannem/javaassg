@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" >
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+    <style>
+        body{
+            text-align: center;
+            /* background-image: url("https://tse2.mm.bing.net/th?id=OIP.LG0HknlCzpbD3chAvC6IeQHaEK&pid=Api&P=0");
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            
+            background-size: cover;     */
+        
+        }
+        h1{
+            color: red;
+        }
+        .container{
+              display: flexbox;
+            padding-top: 15rem;
+        }
+        button{
+            background-color: rgb(95, 197, 18);
+            
+        }
+        button:hover{
+            
+            background-color: rgb(255, 0, 43);
+            
+        }
+
+    </style>
+ 
+    <script>
+        function fun(e){
+            event.preventDefault();
+        
+     console.log("not refreshed");
+    }
+    function myfun(form){
+      var n1=parseInt(document.getElementById("operand1").value);
+      
+    
+      var n2=parseInt(document.getElementById("operand2").value);
+      
+      var oper=document.getElementById("operator").value;
+      
+      
+        if(oper === '+'){
+        
+        document.getElementById("answer").value=n1+n2;
+        }
+          
+        if(oper === '-'){
+        
+       document.getElementById("answer").value=n1-n2;
+        }
+          
+        if(oper === '*'){
+        
+        document.getElementById("answer").value=n1*n2;
+        }
+          
+        if(oper === '/'){
+        
+        document.getElementById("answer").value=n1/n2;
+        }
+          
+        if(oper === '%'){
+        
+        document.getElementById("answer").value=n1%n2;
+        } 
+     } 
+     function run(){
+        document.getElementById("answer").value=" ";
+     }
+     </script>
+</head>
+<body>
+    <div class="container">
+    <h1> CALCULATOR</h1>
+    <br>
+    <br>
+    <form onsubmit="fun()">
+        <input type="number" id="operand1" placeholder="firstnumber" onchange="run()">
+        
+        <select   id="operator" placeholder="operator" onchange="run()">
+            <option value="#"> select operator</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/" >/</option>
+            <option value="%">%</option>
+        </select> 
+        <input type="number" id="operand2" placeholder="secondnumber" onchange="run()">
+        <br>
+        <br>
+        <button onclick="myfun(this.form)">submit</button>
+        <br>
+        <br>
+        <input type="text" id="answer" readonly placeholder="answer">
+
+    </form>
+</div>
+    
+      
+</body>
+</html>
